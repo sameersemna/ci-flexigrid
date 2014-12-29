@@ -8,6 +8,10 @@ Demo
 
 [ci-flexigrid.sameershemna.com](http://ci-flexigrid.sameershemna.com/)
 
+Installation
+====
+
+The database used is available as SQL dump in 'database_backup' folder in the repository.
 
 Credits
 =======
