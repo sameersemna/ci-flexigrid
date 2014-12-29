@@ -70,17 +70,64 @@
 	<h1>Welcome to CodeIgniter with Flexigrid!</h1>
 
 	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
 
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/welcome.php</code>
+		<article class="markdown-body entry-content" itemprop="mainContentOfPage">
+			<h1><a id="user-content-ci-flexigrid" class="anchor" href="#ci-flexigrid" aria-hidden="true"><span class="octicon octicon-link"></span></a>ci-flexigrid</h1>
 
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
-		
-		<p>If you are exploring CodeIgniter Flexigrid, you should check the demo: <a href="<?php echo $this->config->item('base_url') ?>countries">Countries</a>.</p>
+			<p>CodeIgniter 2.2 stable with jQuery Flexigrid implementation</p>
+			
+			<h1>
+			<a id="user-content-demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download</h1>
+
+			<p><a href="https://github.com/sameersemna/ci-flexigrid">GitHub</a></p>
+
+			<h1>
+			<a id="user-content-demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h1>
+
+			<p><a href="<?php echo $this->config->item('base_url') ?>countries">Countries</a></p>
+
+			<h1>
+			<a id="user-content-credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits</h1>
+
+			<p><a href="https://github.com/bcit-ci/CodeIgniter">CodeIgniter PHP Framework</a></p>
+
+			<p><a href="https://github.com/paulopmx/Flexigrid">Paulo Marinas for Flexigrid</a></p>
+
+			<p>Salute to the original author,
+			<a href="https://gembelzillonmendonk.wordpress.com/2010/06/28/flexigrid-and-codeigniter-with-advanced-searching-with-example/">gembelzillonmendonk</a></p>
+
+			<h1>
+			<a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
+
+			<p>The MIT License (MIT)</p>
+
+			<p>Copyright (c) 2014 sameersemna</p>
+
+			<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+			of this software and associated documentation files (the "Software"), to deal
+			in the Software without restriction, including without limitation the rights
+			to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+			copies of the Software, and to permit persons to whom the Software is
+			furnished to do so, subject to the following conditions:</p>
+
+			<p>The above copyright notice and this permission notice shall be included in all
+			copies or substantial portions of the Software.</p>
+
+			<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+			IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+			FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+			AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+			LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+			OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+			SOFTWARE.</p>
+
+			<h1>
+			<a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>CodeIgniter User Guide</h1>		
+
+			<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+
+		</article>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
