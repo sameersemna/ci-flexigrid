@@ -1,0 +1,17 @@
+CodeIgniter - Call to a member function select() on a non-object [ http://stackoverflow.com/questions/8322124/codeigniter-call-to-a-member-function-select-on-a-non-object ]
+
+The first way is to include the "database" in your application/config/autoload.php
+
+$autoload['libraries'] = array('database', 'session');
+or in your class constructor:
+
+class User_model extends CI_Model { 
+
+     public function __construct() 
+     {
+           parent::__construct(); 
+           $this->load->database();
+     }
+}
+You can get more information here: http://ellislab.com/codeigniter/user_guide/database/connecting.html
+
