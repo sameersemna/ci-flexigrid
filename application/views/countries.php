@@ -129,6 +129,32 @@ function filter_alpha(alpha,grid){
 	$('#flex1').flexReload();
 } 
 
+///Filter for Alphabet Buttons
+function exportTo(format,grid){ 
+	var groupOp = $(grid.sDiv).find("select[name=groupOp]").val();
+	var squery = '{"groupOp":"' + groupOp + '","rules":[';
+	$('.sDiv2').each( function(idx) {
+		field = $("select[name=qtype]", this).val();
+		op = $("select[name=op]", this).val();
+		data = ''
+		
+		var i = $("select[name=qtype]", this).get(0).selectedIndex;
+		
+		if (($(".qsbox.q"+i, this).css("display") == "inline") || ($(".qsbox.q"+i, this).css("display") == "inline-block")) {
+			data = $(".qsbox.q"+i, this).val();
+		}else{
+			data = $(".qsbox.default", this).val();
+		}
+
+		squery += '{"field":"'+field+'","op":"'+op+'","data":"'+data+'"},';
+	});
+
+	squery = squery.substring(squery.length-1,0) + ']}';
+	console.dir(squery);
+	
+	window.location.href = "<?php echo site_url("/countries_feed/export");?>"+"?filters="+squery+"&format="+format;
+} 
+
 </script>
 
 

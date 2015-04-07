@@ -61,6 +61,32 @@ class Countries_model extends CI_Model
 		return $return;
 	}
 	
+	///Get all countries without limit
+	public function get_all_countries() 
+	{
+		//Select table name
+		$table_name = $this->table_name;
+		
+		//Build contents query
+		$this->db->select('id,iso,name,printable_name,iso3,numcode,created_date')->from($table_name);
+		$this->CI->flexigrid->build_query(FALSE);
+		
+		//Get contents
+		$return['records'] = $this->db->get();
+		//echo $this->db->last_query();
+		//Build count query
+		$this->db->select('count(id) as record_count')->from($table_name);
+		$this->CI->flexigrid->build_query(FALSE);
+		$record_count = $this->db->get();
+		$row = $record_count->row();
+		
+		//Get Record Count
+		$return['record_count'] = $row->record_count;
+	
+		//Return all
+		return $return;
+	}
+	
 	/**
 	* Remove country
 	* @param int country id
