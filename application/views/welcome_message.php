@@ -86,6 +86,7 @@
 			<a id="user-content-demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h1>
 
 			<p><a href="<?php echo $this->config->item('base_url') ?>countries">Countries</a></p>
+			<p><a href="<?php echo $this->config->item('base_url') ?>alphabet">Alphabet Filter</a></p>
 
 			<h1>
 			<a id="user-content-credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits</h1>
