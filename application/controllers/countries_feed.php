@@ -126,7 +126,7 @@ class Countries_Feed extends CI_Controller
             $this->convert_to_csv($record_items, $file_name);
         } else if ($format == 'Excel') {
             $file_name = 'countries_' . date('Ymd_His') . '.xls';
-            $this->convert_to_csv($record_items, $file_name);
+            $this->convert_to_excel($record_items, $file_name);
         }
     }
 
@@ -148,6 +148,35 @@ class Countries_Feed extends CI_Controller
         /** Send file to browser for download */
         fpassthru($temp_memory);
     }
+    
+    
+    protected function convert_to_excel($input_array, $output_file_name)
+	{
+		/**
+		 * No need to use an external library here. The only bad thing without using external library is that Microsoft Excel is complaining
+		 * that the file is in a different format than specified by the file extension. If you press "Yes" everything will be just fine.
+		 * */
+		$string_to_export = "";
+		foreach ($input_array as $line) {
+			foreach($line as $column){
+				$string_to_export .= $this->_trim_export_string($column)."\t";
+			}
+			$string_to_export .= "\n";
+		}
+		// Convert to UTF-16LE and Prepend BOM
+		$string_to_export = "\xFF\xFE" .mb_convert_encoding($string_to_export, 'UTF-16LE', 'UTF-8');
+		header('Content-type: application/vnd.ms-excel;charset=UTF-16LE');
+		header('Content-Disposition: attachment; filename='.$output_file_name);
+		header("Cache-Control: no-cache");
+		echo $string_to_export;
+		die();
+	}
+	
+	protected function _trim_export_string($value)
+	{
+		$value = str_replace(array("&nbsp;","&amp;","&gt;","&lt;"),array(" ","&",">","<"),$value);
+		return  strip_tags(str_replace(array("\t","\n","\r"),"",$value));
+	}
     
     
 }
