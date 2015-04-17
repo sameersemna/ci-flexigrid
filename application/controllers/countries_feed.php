@@ -65,7 +65,7 @@ class Countries_Feed extends CI_Controller
             );
         }
         //Print please
-        $this->output->set_output($this->flexigrid->json_build($records['record_count'], $record_items));
+        $this->output->set_output($this->flexigrid->json_build($records['record_count'], $record_items, $records['footmsg']));
     }
     
     

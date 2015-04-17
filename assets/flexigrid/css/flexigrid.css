@@ -1397,7 +1397,7 @@ div.colCopy {
 		margin: 0px 5px;
 		}
 	
-	.flexigrid div.pDiv .pPageStat, .flexigrid div.pDiv .pcontrol
+	.flexigrid div.pDiv .pPageStat, .flexigrid div.pDiv .pcontrol, .flexigrid div.pDiv .pFooterMsg
 		{
 		position: relative;
 		top: 5px;

@@ -55,7 +55,8 @@
 			 onChangeSort: false,
 			 onSuccess: false,
 			 onError: false,
-			 onSubmit: false // using a custom populate function
+			 onSubmit: false, // using a custom populate function
+			 footermsg: ''
 		  }, p);
 		  		
 
@@ -385,6 +386,11 @@
 				else
 					p.total = data.total;
 					
+				if (p.dataType=='xml')
+					p.footmsg = +$('rows footmsg',data).text();
+				else
+					p.footmsg = data.footmsg;
+					
 				if (p.total==0)
 					{
 					$('tr, a, td, div',t).unbind();
@@ -568,13 +574,15 @@
 			
 			if (p.total<r2) r2 = p.total;
 			
-			var stat = p.pagestat;
-			
+			var stat = p.pagestat;			
 			stat = stat.replace(/{from}/,r1);
 			stat = stat.replace(/{to}/,r2);
-			stat = stat.replace(/{total}/,p.total);
-			
+			stat = stat.replace(/{total}/,p.total);			
 			$('.pPageStat',this.pDiv).html(stat);
+			
+			var fmsg = p.footermsg;
+			fmsg = fmsg.replace(/{footmsg}/,p.footmsg);		
+			$('.pFooterMsg',this.pDiv).html(fmsg);
 			
 			},
 			buildoperator: function(){
@@ -1189,7 +1197,7 @@
 		g.pDiv.className = 'pDiv';
 		g.pDiv.innerHTML = '<div class="pDiv2"></div>';
 		$(g.bDiv).after(g.pDiv);
-		var html = ' <div class="pGroup"> <div class="pFirst pButton"><span></span></div><div class="pPrev pButton"><span></span></div> </div> <div class="btnseparator"></div> <div class="pGroup"><span class="pcontrol">'+p.pagetext+' <input type="text" size="4" value="1" /> '+p.outof+' <span> 1 </span></span></div> <div class="btnseparator"></div> <div class="pGroup"> <div class="pNext pButton"><span></span></div><div class="pLast pButton"><span></span></div> </div> <div class="btnseparator"></div> <div class="pGroup"> <div class="pReload pButton"><span></span></div> </div> <div class="btnseparator"></div> <div class="pGroup"><span class="pPageStat"></span></div>';
+		var html = ' <div class="pGroup"> <div class="pFirst pButton"><span></span></div><div class="pPrev pButton"><span></span></div> </div> <div class="btnseparator"></div> <div class="pGroup"><span class="pcontrol">'+p.pagetext+' <input type="text" size="4" value="1" /> '+p.outof+' <span> 1 </span></span></div> <div class="btnseparator"></div> <div class="pGroup"> <div class="pNext pButton"><span></span></div><div class="pLast pButton"><span></span></div> </div> <div class="btnseparator"></div> <div class="pGroup"> <div class="pReload pButton"><span></span></div> </div> <div class="btnseparator"></div> <div class="pGroup"><span class="pPageStat"></span></div> <div class="pGroup"><span class="pFooterMsg"></span></div>';
 		$('div',g.pDiv).html(html);
 		
 		$('.pReload',g.pDiv).click(function(){g.populate()});

@@ -387,10 +387,10 @@ class Flexigrid
 	 * @param	processed data that is going to the grid
 	 * @return  json formated data
 	 */
-	public function json_build($record_count,$data) 
+	public function json_build($record_count,$data,$footmsg = '') 
 	{
 		//Creates new Data Set and sends all the information
-		$fg_data_set = new Fg_data_set($record_count,$this->post_info['page'],$data);
+		$fg_data_set = new Fg_data_set($record_count,$this->post_info['page'],$data, $footmsg);
 		
 		//Builds and returns JSON 
 		return $fg_data_set->build_json();
@@ -420,6 +420,7 @@ class Fg_data_set
 {
 	public $page;
     public $total;
+	public $footmsg;
     public $rows = array();
     
 	/**
@@ -427,12 +428,14 @@ class Fg_data_set
 	 *
 	* @param	total number of records
 	* @param	page number
+	* @param	footer message
 	* @param	processed data that is going to the grid
 	 */
-    public function Fg_data_set($record_count,$page,&$data) {
+    public function Fg_data_set($record_count,$page,&$data, $footmsg) {
     	//Set initial params
     	$this->total = $record_count;
     	$this->page = $page;
+		$this->footmsg = $footmsg;
     	
     	//Prepare data for json encoding
 		$this->load($data);

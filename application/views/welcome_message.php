@@ -88,6 +88,7 @@
 			<p><a href="<?php echo $this->config->item('base_url') ?>countries">Countries</a></p>
 			<p><a href="<?php echo $this->config->item('base_url') ?>alphabet">Alphabet Filter</a></p>
 			<p><a href="<?php echo $this->config->item('base_url') ?>export">Export</a></p>
+			<p><a href="<?php echo $this->config->item('base_url') ?>footermessage">Footer message</a></p>
 
 			<h1>
 			<a id="user-content-credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits</h1>

@@ -56,6 +56,16 @@ class Countries_model extends CI_Model
 		
 		//Get Record Count
 		$return['record_count'] = $row->record_count;
+		
+		
+		//Build sum query for footer message
+		$this->db->select('SUM(numcode) as sum_code')->from($table_name);
+		$this->CI->flexigrid->build_query(FALSE);
+		$record_count = $this->db->get();
+		$row = $record_count->row();
+		
+		//Get Footer Message
+		$return['footmsg'] = $row->sum_code;
 	
 		//Return all
 		return $return;
