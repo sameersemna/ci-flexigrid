@@ -111,9 +111,10 @@
 					
 					var nd = parseInt($(g.nDiv).height());
 					
-					if (nd>newH)
-						$(g.nDiv).height(newH).width(200);
-					else
+					// SHS Fixing Columns selector being hidden on hover on height auto
+					///if (nd>newH)
+					//	$(g.nDiv).height(newH).width(200);
+					//else
 						$(g.nDiv).height('auto').width('auto');
 					
 					$(g.block).css({height:newH,marginBottom:(newH * -1)});

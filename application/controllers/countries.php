@@ -42,7 +42,7 @@ class Countries extends CI_Controller {
 		 */
 		$gridParams = array(
 		'width' => 'auto',
-		'height' => 400,
+		'height' => 'auto',
 		'rp' => 15,
 		'rpOptions' => '[10,15,20,25,40]',
 		'pagestat' => 'Displaying: {from} to {to} of {total} items.',
